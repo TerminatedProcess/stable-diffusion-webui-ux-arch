@@ -1,0 +1,114 @@
+
+################################################################
+[1m[32mInstall script for stable-diffusion + Web UI
+[1m[34mTested on Debian 11 (Bullseye), Fedora 34+ and openSUSE Leap 15.4 or newer.[0m
+################################################################
+
+################################################################
+Running on [1m[32mdev[0m user
+################################################################
+
+################################################################
+Repo already cloned, using it as install directory
+################################################################
+
+################################################################
+python venv already activate or run without venv: /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/.venv
+################################################################
+
+################################################################
+Launching launch.py...
+################################################################
+glibc version is 2.42
+Check TCMalloc: libtcmalloc_minimal.so.4
+libtcmalloc_minimal.so.4 is linked with libc.so,execute LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4
+fatal: No names found, cannot describe anything.
+Python 3.10.16 (main, Mar 17 2025, 21:01:46) [Clang 20.1.0 ]
+Version: 1.10.1
+Commit hash: 07f647104e3a25d5e25141fcacb92aea9e2c35cf
+Installing clip
+Installing open_clip
+Cloning assets into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-webui-assets...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-webui-assets'...
+Cloning Stable Diffusion into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai'...
+remote: Repository not found.
+fatal: repository 'https://github.com/Stability-AI/stablediffusion.git/' not found
+Traceback (most recent call last):
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/launch.py", line 48, in <module>
+    main()
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/launch.py", line 39, in main
+    prepare_environment()
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/launch_utils.py", line 412, in prepare_environment
+    git_clone(stable_diffusion_repo, repo_dir('stable-diffusion-stability-ai'), "Stable Diffusion", stable_diffusion_commit_hash)
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/launch_utils.py", line 192, in git_clone
+    run(f'"{git}" clone --config core.filemode=false "{url}" "{dir}"', f"Cloning {name} into {dir}...", f"Couldn't clone {name}", live=True)
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/launch_utils.py", line 116, in run
+    raise RuntimeError("\n".join(error_bits))
+RuntimeError: Couldn't clone Stable Diffusion.
+Command: "git" clone --config core.filemode=false "https://github.com/Stability-AI/stablediffusion.git" "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai"
+Error code: 128
+
+################################################################
+[1m[32mInstall script for stable-diffusion + Web UI
+[1m[34mTested on Debian 11 (Bullseye), Fedora 34+ and openSUSE Leap 15.4 or newer.[0m
+################################################################
+
+################################################################
+Running on [1m[32mdev[0m user
+################################################################
+
+################################################################
+Repo already cloned, using it as install directory
+################################################################
+
+################################################################
+python venv already activate or run without venv: /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/.venv
+################################################################
+
+################################################################
+Launching launch.py...
+################################################################
+glibc version is 2.42
+Check TCMalloc: libtcmalloc_minimal.so.4
+libtcmalloc_minimal.so.4 is linked with libc.so,execute LD_PRELOAD=/usr/lib/libtcmalloc_minimal.so.4
+fatal: No names found, cannot describe anything.
+Python 3.10.16 (main, Mar 17 2025, 21:01:46) [Clang 20.1.0 ]
+Version: 1.10.1
+Commit hash: 07f647104e3a25d5e25141fcacb92aea9e2c35cf
+Cloning Stable Diffusion into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai'...
+Cloning Stable Diffusion XL into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/generative-models...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/generative-models'...
+Cloning K-diffusion into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/k-diffusion...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/k-diffusion'...
+Cloning BLIP into /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/BLIP...
+Cloning into '/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/BLIP'...
+Installing requirements
+Launching Web UI with arguments: --skip-python-version-check
+/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/.venv/lib/python3.10/site-packages/timm/models/layers/__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+no module 'xformers'. Processing without...
+no module 'xformers'. Processing without...
+Traceback (most recent call last):
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/launch.py", line 48, in <module>
+    main()
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/launch.py", line 44, in main
+    start()
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/launch_utils.py", line 465, in start
+    import webui
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/webui.py", line 13, in <module>
+    initialize.imports()
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/initialize.py", line 35, in imports
+    from modules import shared_init
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/shared_init.py", line 5, in <module>
+    from modules import shared
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/shared.py", line 6, in <module>
+    from modules import shared_cmd_options, shared_gradio_themes, options, shared_items, sd_models_types
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/modules/sd_models_types.py", line 1, in <module>
+    from ldm.models.diffusion.ddpm import LatentDiffusion
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai/ldm/models/diffusion/ddpm.py", line 24, in <module>
+    from ldm.models.autoencoder import VQModelInterface, IdentityFirstStage, AutoencoderKL
+  File "/home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch/repositories/stable-diffusion-stability-ai/ldm/models/autoencoder.py", line 6, in <module>
+    from taming.modules.vqvae.quantize import VectorQuantizer2 as VectorQuantizer
+ModuleNotFoundError: No module named 'taming'
