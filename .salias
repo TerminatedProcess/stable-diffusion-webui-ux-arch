@@ -2,41 +2,14 @@ clear
 set -gx ENV_NAME '.venv'
 alias rmenv='rm -rf .envrc $ENV_NAME uv.lock; exit'
 alias mkenv='mkuv $ENV_NAME 3.10.16'
-alias nixs='nix develop .#cuda'
+alias r='clear;./webui.sh'
+alias help='clear;./webui.sh --help'
+
 set -gx python_cmd 'python'
 
 function run
    clear
-   ./webui.sh --skip-python-version-check # --xformers
-end
-
-function old-run
-   clear
-   # Patch stable-diffusion repo if needed
-   if test -f repositories/stable-diffusion-stability-ai/ldm/models/diffusion/ddpm.py && ! grep -q "LatentDepth2ImageDiffusion" repositories/stable-diffusion-stability-ai/ldm/models/diffusion/ddpm.py
-      echo "Patching stable-diffusion repository..."
-      ./patch-stable-diffusion.sh
-   end
    ./webui.sh --skip-python-version-check --xformers
-end
-alias sdc='cd /home/dev/work/media/stablediffusion;v'
-
-function old_install
-   clear
-   removepyall
-   python -m ensurepip --upgrade
-   python -m pip install --upgrade pip
-   uv pip install tokenizers --only-binary :all:
-   python -m pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu118
-   python -m pip install xformers==0.0.23.post1 --index-url https://download.pytorch.org/whl/cu118
-   test -d repositories/taming-transformers || git clone https://github.com/CompVis/taming-transformers.git repositories/taming-transformers
-   rm -rf repositories/stable-diffusion-stability-ai
-   echo "Installation complete! Run 'run' to start the webui (it will auto-patch on first run)"
-end
-
-function removepyall
-   find /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null; echo "Cache cleared"
-   find /home/dev/work/media/stablediffusion/stable-diffusion-webui-ux-arch -name "*.pyc" -delete 2>/dev/null; echo "Pyc files deleted"
 end
 
 function install
@@ -46,6 +19,8 @@ function install
    python -m pip install --upgrade pip
    # Install PyTorch with CUDA 11.8 (compatible with CUDA 13.0 system)
    python -m pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu118
+   # Install xformers for memory-efficient attention
+   python -m pip install xformers==0.0.23.post1 --index-url https://download.pytorch.org/whl/cu118
    # Clone taming-transformers if not exists
    test -d repositories/taming-transformers || git clone https://github.com/CompVis/taming-transformers.git repositories/taming-transformers
    # Create missing __init__.py for taming module
