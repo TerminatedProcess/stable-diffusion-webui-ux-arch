@@ -15,7 +15,7 @@ def import_module_from_path(module_name, paths):
     raise FileNotFoundError(f"Module file not found in specified paths: {paths}")
 
 
-paths = ["extensions-builtin/LORA"]
+paths = ["extensions-builtin/Lora"]
 
 try:
     network = import_module_from_path("network", paths)
